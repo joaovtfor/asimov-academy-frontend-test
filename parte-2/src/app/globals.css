@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+body {
+  @apply bg-asimov-black text-white font-sans;
+}
