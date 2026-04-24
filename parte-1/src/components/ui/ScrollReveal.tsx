@@ -18,10 +18,8 @@ export default function ScrollReveal({
   direction = "up",
   className = "",
 }: ScrollRevealProps) {
-  // Hook de acessibilidade: checa se o SO do usuário pediu redução de movimento
   const shouldReduceMotion = useReducedMotion();
 
-  // Mapeia a direção para o eixo e valor adequados (estado inicial)
   const getDirectionOffset = (dir: Direction) => {
     switch (dir) {
       case "up":
@@ -39,7 +37,6 @@ export default function ScrollReveal({
 
   const offset = getDirectionOffset(direction);
 
-  // Se o usuário preferir movimento reduzido, anula o eixo X/Y e usa apenas opacidade
   const initial = {
     opacity: 0,
     ...(shouldReduceMotion ? { x: 0, y: 0 } : offset),
@@ -51,10 +48,9 @@ export default function ScrollReveal({
     y: 0,
   };
 
-  // Configuração da física da transição dependendo do reducedMotion
   const transition = {
     delay: delay,
-    type: shouldReduceMotion ? "tween" : "spring",
+    type: (shouldReduceMotion ? "tween" : "spring") as "tween" | "spring", // <-- A correção do TypeScript está aqui
     duration: shouldReduceMotion ? 0.3 : 0.8,
     bounce: shouldReduceMotion ? 0 : 0.3,
   };
