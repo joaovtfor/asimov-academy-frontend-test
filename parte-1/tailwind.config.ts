@@ -33,9 +33,21 @@ const config: Config = {
         bold: '700',
       },
       spacing: {
-        // Exemplo de mapeamento para evitar valores arbitrários como w-[13px]
-        // Caso haja necessidades de pixel perfect que fujam da escala padrão:
         '13': '13px',
+      },
+      keyframes: {
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        marquee: 'marquee 25s linear infinite',
       },
     },
   },
