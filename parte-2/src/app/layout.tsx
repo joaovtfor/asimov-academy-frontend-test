@@ -10,8 +10,21 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aprenda Python e IA | Asimov",
-  description: "O curso mais prático do Brasil para quem quer entrar em tecnologia sem enrolação.",
+  title: "Aprenda Python e IA | Asimov Academy",
+  description: "O curso mais prático do Brasil para quem quer entrar em tecnologia sem enrolação. Aprenda Python do zero e construa projetos reais com Inteligência Artificial.",
+  keywords: ["Python", "Inteligência Artificial", "Curso de Programação", "Asimov Academy", "Aprender a programar", "Data Science"],
+  openGraph: {
+    title: "Aprenda Python e IA | Asimov Academy",
+    description: "O curso mais prático do Brasil para quem quer entrar em tecnologia sem enrolação.",
+    siteName: "Asimov Academy",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aprenda Python e IA | Asimov Academy",
+    description: "O curso mais prático do Brasil para quem quer entrar em tecnologia sem enrolação.",
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
