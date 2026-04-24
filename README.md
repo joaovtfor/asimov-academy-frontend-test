@@ -1,1 +1,0 @@
-# asimov-academy-frontend-test
